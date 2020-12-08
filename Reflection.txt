@@ -1,0 +1,30 @@
+Program Reflection
+
+1. What did you learn during this project?
+
+In this project, we mostly learnt about the mechanism of GUI (stands for Graphical User Interface), 
+which enables us to interact with users through graphical icons and present a better visualized results, 
+such as reading the pictures of each TA from a file.
+
+Also, in the auto-correct process, we learnt to use Levenshtein distance algorithm for measuring 
+the difference and compare the similarity between two strings. The smaller the return results, the 
+closer the strings. This improves our search results a lot.
+
+2. What did you enjoy during this project?
+
+Through this project, we did enjoy working toghther as a group. We came up with this idea together, 
+and we kept improving it all the time. It was an exciting moment when we figure out how to illlustrate our 
+program and make it interesting. And we aredelighted to have a chance to show out gratefulness to our TAs 
+throughout this program. There's really a sense of accomplishment when seeing this program is done.
+
+3. What did you find challenging or frustrating during this project?
+
+One challenging part was to learn how to utilize GUI. Since it was a brand new concept to us, we watched youtube 
+video tutorials and download some GUI example codes and figured out how to use it. Another challenge is to creat classes
+and utilize it in the main client. We saw it done in each of the assessment and it is the first time we are actually 
+writing the code to associate classes with classes. 
+
+4. What did you find particularly helpful for your learning during this project?
+
+Communications. We held a group meeting almost 2-3 times a week and we have a group chat.
+Thus anytime each of us got stuck or had questions, we could communicate immediately and settle the problems down.
