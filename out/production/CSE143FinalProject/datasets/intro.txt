@@ -1,0 +1,7 @@
+You may find the best-fit TA throughout this program!
+Here are the features:
+    "Search" - to access the TA's personal info and related evaluation
+    "Blind-date" - to match with the best-fit TA
+    "View the intended section" - to display the statistics of users who already choose this TA
+    "Register" - to register your intented TA section
+    "Quit" - to end this program

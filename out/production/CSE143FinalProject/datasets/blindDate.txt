@@ -1,0 +1,6 @@
+This function would help match the user up with his/her ideal TA.
+Here users can select their expectations, such as their preferred section time,
+preferred teaching styles or preferred personalities of this TA.
+Note: You could select Null as its feature but make sure you choose enough
+features to generate a TA. No bulb light up means no TA found
+
