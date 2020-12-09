@@ -32,14 +32,13 @@ The program has three functions:
 2. Evaluation class: Store each TA's evaluation in its fields
 3. Function class: read the input file and implement data structure to store files into Evaluation class or Information class. Each Node in the binary tree contains one of the TA's evaluation
 4. graphic class: main panel for choose cse142 or cse143
-![graphic](/src/datasets/main.png "main")
 5. optionPanel class: made connection to the other three class
 	*  searchTA class: Search your TA.
 	*  Evaluator: Blind Date with your TA.
 	*  viewTA: View the intended Section.
 
  
-## Ways to implement tasks
+## Reasoning behind design decisions
 
 * 
 
@@ -72,7 +71,7 @@ the most relevent TA. To accomplish this goal, we use the Levenshtein distance a
 We woule present the closest strings/TA's name. 
 
 
-## Our Ways of Illustration 
+## Our Ways of Illustration the Blind Date
 
 ![0](/src/datasets/bulb.jpg "bulb")
 ![1](/src/datasets/extinct.jpg "extinct")
