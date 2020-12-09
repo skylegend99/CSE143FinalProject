@@ -32,43 +32,44 @@ We have 3 functions, all of which would have interaction with users in a web app
 In the three functions above, users can end the program anytime and directly display the results.
 								
 
-### 2. How to run this program
+### 2. Run this program on ed
 
 To run this program on ed, you'll need to do the following steps:
 
-(1) See our overall toggle tree by clicking the button "Toggle Tree View" in the top left.
+1.  See our overall toggle tree by clicking the button "Toggle Tree View" in the top left.
 
-(2) Find and click "main.java" in the left side.
+2.  Find and click "main.java" in the left side.
 
-(3) Click the button "Open Terminal" on the top, open a terminal and type the following:
+3.  Click the button "Open Terminal" on the top, open a terminal and type the following:
 
 	javac main.java
 	java main
 
-(4) There should be a remote web app turning up. If not, then click "Remote App" button on the top.
+4.  There should be a remote web app turning up. If not, then click "Remote App" button on the top.
 
-(5) The first page is asking which course (CSE 142/143) you are interested in. 
+5.  The first page is asking which course (CSE 142/143) you are interested in. 
+![graphic](/src/datasets/main.png "main")
 	Inputing different course will lead you to different search system.
 
-(6) Choose one of the 3 functions:
-
-In "Search", type in the name of any TA. If you misspell the name, the program will automatically do 
+6.  Choose one of the 3 functions:
+![graphic](/src/datasets/option.png "main")
+	* In "Search", type in the name of any TA. If you misspell the name, the program will automatically do 
 the auto-correct process and present the closest result; The TA's information, includingthe pronouns, 
 name of the section, the IPL section time, the email, and the time of the quiz section, is displayed. 
 
-In "Blind-date", each TA is represented as a lamp. It is on at the beginning and the users can
+	* In "Blind-date", each TA is represented as a lamp. It is on at the beginning and the users can
 tap the buttons to choose their perferred types. Once they are done with their choices, they can tap
 the "get result" button - one or more TAs that fits relatively most of the options is displayed and their 
 corresponding lamp will be turned on.
 
-In "View", users can type the name of the TA with autocorrect in order to see how many students would
+	* In "View", users can type the name of the TA with autocorrect in order to see how many students would
 like to choose this TA's quiz section. Since they cannot officially register for the section in this program,
 this option helps the students to understand how popular the section is. Users can participate in the number
 of people being displayed by "View" by pressing the button.  
 
-(7) 
-
-
+7. f
+![graphic](/src/datasets/searchTA.png "main")
+![graphic](/src/datasets/blindDate.png "main")
 
 
 
