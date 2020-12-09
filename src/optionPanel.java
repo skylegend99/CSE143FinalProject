@@ -1,3 +1,5 @@
+// The optionalPanel class displayys the goal of the program and the explanation of each option and allows
+// users to access the "search", "blind-date", and "view" option.
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +13,10 @@ public class optionPanel {
     public optionPanel() {
         searchTA = new searchTA();
         evaluator = new Evaluator();
+        viewTA w = new viewTA();
     }
+
+    // constructs the option Panel
     public void course(Frame owner, Component parentComponent, int title) {
         final JDialog dialog = new JDialog(owner, "CSE " + title + "TA", true);
         dialog.setSize(890, 450);
@@ -19,62 +24,62 @@ public class optionPanel {
         dialog.setLocationRelativeTo(parentComponent);
         SpringLayout layout = new SpringLayout();
 
-        // Jlabel
+        // construct the Jlabel
         JLabel label = new JLabel("CSE " + title + "TA List");
         label.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 35));
 
-        // Option label
+        // construct the Option label
         JLabel option = new JLabel("Choose your option:");
         option.setFont(new Font(Font.DIALOG_INPUT, Font.BOLD, 20));
         option.setForeground(Color.red);
 
-        // JButton
+        // construct the JButton
         JButton btn01 = new JButton("Search");
         JButton btn02 = new JButton("Blind-date");
         JButton btn03 = new JButton("View the intended section");
         JButton btn04 = new JButton("Quit");
 
-        // JPanel
+        // construct the JPanel
         JPanel panel = new JPanel(layout);
         panel.setBackground(Color.WHITE);
 
-        // TextArea
+        // construct the TextArea
         JTextArea textArea = new JTextArea(5, 15);
         textArea.setEditable(false);
         textArea.setFont(new Font(Font.DIALOG_INPUT, Font.BOLD, 15));
         readIntro(textArea);
 
-        // label position
+        // locate the label position
         SpringLayout.Constraints labelCons = layout.getConstraints(label);
         labelCons.setX(Spring.constant(300));
         labelCons.setY(Spring.constant(5));
 
-        // TextArea position
+        // locate the TextArea position
         SpringLayout.Constraints textCons = layout.getConstraints(textArea);
         textCons.setX(Spring.constant(20));
         textCons.setY(Spring.constant(50));
 
-        // Button1 position
+        // locate the Button1 position
         SpringLayout.Constraints btnCon1 = layout.getConstraints(btn01);
         btnCon1.setX(Spring.constant(500));
         btnCon1.setY(Spring.constant(220));
 
-        // Button2 position
+        // locate the Button2 position
         SpringLayout.Constraints btnCon2 = layout.getConstraints(btn02);
         btnCon2.setX(Spring.constant(500));
         btnCon2.setY(Spring.constant(260));
 
-        // Button3 position
+        // locate the Button3 position
         SpringLayout.Constraints btnCon3 = layout.getConstraints(btn03);
         btnCon3.setX(Spring.constant(500));
         btnCon3.setY(Spring.constant(300));
 
-        // Button4 position
+        // locate the Button4 position
         SpringLayout.Constraints btnCon4 = layout.getConstraints(btn04);
         btnCon4.setX(Spring.constant(500));
         btnCon4.setY(Spring.constant(340));
 
-        // OptionLabel position
+        // locate the OptionLabel position
         SpringLayout.Constraints optionCon = layout.getConstraints(option);
         optionCon.setX(Spring.constant(200));
         optionCon.setY(Spring.constant(300));
@@ -91,9 +96,10 @@ public class optionPanel {
         dialog.setVisible(true);
     }
 
+    // takes JTextArea textArea as a parameetr and prints put the intro in the panel
     public void readIntro(JTextArea textArea)  {
         try {
-            Scanner reader = new Scanner(new File("C:\\Users\\Andy\\IdeaProjects\\CSE143FinalProject\\src\\datasets\\intro.txt"));
+            Scanner reader = new Scanner(new File("datasets/intro.txt"));
             while (reader.hasNextLine()) {
                 textArea.append(reader.nextLine() + "\n");
             }
@@ -102,10 +108,12 @@ public class optionPanel {
         }
     }
 
+    // activate the Jbuttons
     public void addAction(JButton btn01, JButton btn02, JButton btn03, JButton btn04,
                           Frame owner, Component parentComponent, int course ){
         btn01.addActionListener(new ActionListener() {
             @Override
+            // generates a new frame for the searchTA class
             public void actionPerformed(ActionEvent e) {
                 searchTA.search(owner, parentComponent, course);
             }
@@ -113,6 +121,7 @@ public class optionPanel {
 
         btn02.addActionListener(new ActionListener() {
             @Override
+            // generates a new frame for the blindDate class
             public void actionPerformed(ActionEvent e) {
                 if (course == 143) {
                     evaluator.blindDate(owner, parentComponent, course);
@@ -124,13 +133,15 @@ public class optionPanel {
 
         btn03.addActionListener(new ActionListener() {
             @Override
+            // generates a new frame for the viewTA class
             public void actionPerformed(ActionEvent e) {
-                searchTA.search(owner, parentComponent, course);
+                viewTA.view(owner, parentComponent, course);
             }
         });
 
         btn04.addActionListener(new ActionListener() {
             @Override
+            // exits the program
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }

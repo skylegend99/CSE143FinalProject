@@ -1,3 +1,5 @@
+// The searchTA class allows users to type in the name of the TA and get his/her
+// basic information
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,37 +14,37 @@ public class searchTA {
         SpringLayout layout = new SpringLayout();
         JPanel panel = new JPanel(layout);
 
-
-        // Jlabel
+        // construct the Jlabel
         JLabel label = new JLabel("Search your CSE " + course + "TA");
         label.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 35));
 
-        // Option label
+        // construct the Option label
         JLabel option = new JLabel("Enter the name:");
         option.setFont(new Font(Font.DIALOG_INPUT, Font.BOLD, 20));
         option.setForeground(Color.black);
 
-        // TextArea
+        // construct the TextArea
         JTextArea textArea = new JTextArea(1, 15);
         textArea.setLineWrap(true);
         textArea.setFont(new Font(Font.DIALOG_INPUT, Font.BOLD, 25));
 
-        // JButton
+        // construct the JButton
         JButton btn01 = new JButton("search");;
 
-        // Info
+        // construct the Info
         JTextArea info = new JTextArea(10,56);
         info.setLineWrap(true);
         info.setEditable(false);
         info.setFont(new Font(Font.DIALOG_INPUT, Font.BOLD, 15));
         info.setOpaque(false);
 
-        // Graph
+        // construct the Graph
         JLabel pictureTA = new JLabel();
 
-        // Add infomation of ta to info
+        // activate Jbutton btn01
         btn01.addActionListener(new ActionListener() {
             @Override
+            // Add infomation of ta to info
             public void actionPerformed(ActionEvent e) {
                 info.setText("");
                 Information infoTA = new Function(course).search(textArea.getText());
@@ -52,7 +54,7 @@ public class searchTA {
                     info.append("We cannot find this TA, you might be looking for this TA:" + infoTA.toString());
                 }
                 try {
-                    String fileName = "C:\\Users\\Andy\\IdeaProjects\\CSE143FinalProject\\src\\datasets\\" + course +"\\";
+                    String fileName = "datasets/" + course +"/";
                     if (course == 143) {
                         fileName += infoTA.name.replace(" ", "") + ".jpg";
                     } else {
@@ -71,32 +73,32 @@ public class searchTA {
             }
         });
 
-        // label
+        // locate the label
         SpringLayout.Constraints labelCon = layout.getConstraints(label);
         labelCon.setX(Spring.constant(100));
         labelCon.setY(Spring.constant(10));
 
-        // option
+        // locate the option
         SpringLayout.Constraints optionCon = layout.getConstraints(option);
         optionCon.setX(Spring.constant(30));
         optionCon.setY(Spring.constant(60));
 
-        // textArea
+        // locate the textArea
         SpringLayout.Constraints textCon = layout.getConstraints(textArea);
         textCon.setX(Spring.constant(250));
         textCon.setY(Spring.constant(60));
 
-        // Button
+        // locate the Button
         SpringLayout.Constraints btnCon = layout.getConstraints(btn01);
         btnCon.setX(Spring.constant(500));
         btnCon.setY(Spring.constant(65));
 
-        // Info
+        // locate the Info
         SpringLayout.Constraints infoCon = layout.getConstraints(info);
         infoCon.setX(Spring.constant(50));
         infoCon.setY(Spring.constant(100));
 
-        // Picture
+        // locate the Picture
         SpringLayout.Constraints picCon = layout.getConstraints(pictureTA);
         picCon.setX(Spring.constant(600));
         picCon.setY(Spring.constant(65));
@@ -111,3 +113,4 @@ public class searchTA {
         dialog.setVisible(true);
     }
 }
+

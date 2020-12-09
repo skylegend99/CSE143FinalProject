@@ -1,3 +1,5 @@
+// Import all of the package we need in this class.
+// LevenshteinDistance package could autocorrect spelling error
 import java.util.*;
 import java.io.*;
 import org.apache.commons.text.WordUtils;
@@ -8,6 +10,7 @@ public class Function {
 	private LevenshteinDistance distance;
 	private Node overallRoot;
 
+	// Initializes the fields.
 	public Function(int course)  {
 		info = constructInfo(course);
 		eva = constructEva();
@@ -15,10 +18,11 @@ public class Function {
 		overallRoot = constructNode();
 	}
 
+	// Constructs a map based on the given course to store the information of TA.
 	public Map<String, Information> constructInfo(int course) {
 		try {
 			Map<String, Information> data = new HashMap<>();
-			Scanner input = new Scanner(new File("C:\\Users\\Andy\\IdeaProjects\\CSE143FinalProject\\src\\datasets\\" + course + ".csv"));
+			Scanner input = new Scanner(new File("datasets/" + course + ".csv"));
 			while (input.hasNextLine()) {
 				String[] line = input.nextLine().split(",");
 				data.put(line[0], Information.fromCsv(line[0], line[1], line[2], line[3], line[4], input.nextLine()));
@@ -30,10 +34,11 @@ public class Function {
 		return null;
 	}
 
+	// Construcs a map to store the evaluations of TA.
 	public Map<String, Evaluation> constructEva() {
 		try {
 			Map<String, Evaluation> data = new HashMap<>();
-			Scanner input = new Scanner(new File("C:\\Users\\Andy\\IdeaProjects\\CSE143FinalProject\\src\\datasets\\evaluation.csv"));
+			Scanner input = new Scanner(new File("datasets/evaluation.csv"));
 			while (input.hasNextLine()) {
 				String[] line = input.nextLine().split(";");
 				data.put(line[0], Evaluation.fromCsv(line[1], line[2], line[3], line[4], line[5]));
@@ -45,11 +50,12 @@ public class Function {
 		return null;
 	}
 
-	// Construct the tree
+	// Constructs the tree.
 	public Node constructNode() {
 		return constructNode(new ArrayList<>(eva.keySet()), overallRoot, 0);
 	}
 
+	// Constructs the tree based on the List, Node and an integer as parameters.
 	private Node constructNode(List<String> nameList, Node root, int i) {
 		if (i < nameList.size()) {
 			String name = nameList.get(i);
@@ -61,10 +67,12 @@ public class Function {
 		return root;
 	}
 
+	// Constructs the Node based on a set.
 	public void rating(Set<String> features) {
 		overallRoot = rating(overallRoot, features);
 	}
 
+	// Constructs and returns the Node.
 	private Node rating(Node root, Set<String> features) {
 		if (root != null) {
 			rating(root.left, features);
@@ -91,10 +99,12 @@ public class Function {
 		return root;
 	}
 
+	// Returns the root with the largest value as a string
 	public String largest() {
 		return largest(overallRoot).name;
 	}
 
+	// Computes the root with the largest value
 	private Node largest(Node root) {
 		if (root.isLeaf()){
 			return root;
@@ -112,6 +122,7 @@ public class Function {
 		}
 	}
 
+	// Returns whether to scan as a boolean
 	public Boolean scan(String name) {
 		name = WordUtils.capitalizeFully(name);
 		if (info.containsKey(name)) {
@@ -120,6 +131,7 @@ public class Function {
 		return false;
 	}
 
+	// Add infomation of ta to info
 	public Information search(String name) {
 		name = WordUtils.capitalizeFully(name);
 		if (!info.containsKey(name)) {
@@ -138,10 +150,12 @@ public class Function {
 		}
 	}
 
+	// Returns the evaluation as a set
 	public Set<String> getEvaName() {
 		return eva.keySet();
 	}
-
+	
+	// Constructs the Node
 	private static class Node {
 		public Evaluation evaluation;
 		public String name;
@@ -152,7 +166,8 @@ public class Function {
 		public Node(Evaluation evaluation, String name) {
 			this(evaluation, name, 0, null, null);
 		}
-
+		
+		// Accesses the node
 		public Node(Evaluation evaluation, String name, int data, Node left, Node right) {
 			this.evaluation = evaluation;
 			this.name = name;
@@ -167,3 +182,4 @@ public class Function {
 		}
 	}
 }
+

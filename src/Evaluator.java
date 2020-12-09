@@ -1,3 +1,5 @@
+//This class will evaluate each TA's scores based on the preferred type given by user
+// and displays the best-fit TA.
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,17 +22,17 @@ public class Evaluator {
         JPanel panel = new JPanel(layout);
         panel.setBackground(Color.WHITE);
 
-        // JLabel
+        // Constructs a JLabel
         final JLabel label = new JLabel("Blind Date with " + course + "TA");
         label.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 35));
         panel.add(label);
 
-        // label of Feature
+        // Consturcts the label of Feature
         final JLabel feature = new JLabel("Select the feature you want");
         feature.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 25));
         panel.add(feature);
 
-        // label of all TA
+        // Consturcts the label of all TA
         Iterator iterator = function.getEvaName().iterator();
         JLabel ta1 = new JLabel((String)iterator.next());
         JLabel ta2 = new JLabel((String)iterator.next());
@@ -54,6 +56,7 @@ public class Evaluator {
         Con1.setY(Spring.constant(170));
         panel.add(ta1);
 
+        // Constructs the icon for TA2
         ta2.setIcon(icon);
         ta2.setHorizontalTextPosition(SwingConstants.CENTER);
         ta2.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -62,6 +65,7 @@ public class Evaluator {
         Con2.setY(Spring.constant(170));
         panel.add(ta2);
 
+        // Constructs the icon for TA3
         ta3.setIcon(icon);
         ta3.setHorizontalTextPosition(SwingConstants.CENTER);
         ta3.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -70,6 +74,7 @@ public class Evaluator {
         Con3.setY(Spring.constant(170));
         panel.add(ta3);
 
+        // Constructs the icon for TA4
         ta4.setIcon(icon);
         ta4.setHorizontalTextPosition(SwingConstants.CENTER);
         ta4.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -78,6 +83,7 @@ public class Evaluator {
         Con4.setY(Spring.constant(170));
         panel.add(ta4);
 
+        // Constructs the icon for TA5
         ta5.setIcon(icon);
         ta5.setHorizontalTextPosition(SwingConstants.CENTER);
         ta5.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -86,6 +92,7 @@ public class Evaluator {
         Con5.setY(Spring.constant(250));
         panel.add(ta5);
 
+        // Constructs the icon for TA6
         ta6.setIcon(icon);
         ta6.setHorizontalTextPosition(SwingConstants.CENTER);
         ta6.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -94,6 +101,7 @@ public class Evaluator {
         Con6.setY(Spring.constant(250));
         panel.add(ta6);
 
+        // Constructs the icon for TA7
         ta7.setIcon(icon);
         ta7.setHorizontalTextPosition(SwingConstants.CENTER);
         ta7.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -102,6 +110,7 @@ public class Evaluator {
         Con7.setY(Spring.constant(250));
         panel.add(ta7);
 
+        // Constructs the icon for TA8
         ta8.setIcon(icon);
         ta8.setHorizontalTextPosition(SwingConstants.CENTER);
         ta8.setVerticalTextPosition(SwingConstants.BOTTOM);
@@ -216,7 +225,7 @@ public class Evaluator {
             }
         });
 
-        // label
+        // Consturcts the label
         SpringLayout.Constraints labelCon = layout.getConstraints(label);
         labelCon.setX(Spring.constant(200));
         labelCon.setY(Spring.constant(10));
@@ -280,23 +289,26 @@ public class Evaluator {
         dialog.setVisible(true);
     }
 
+    // Constructs a ImageIcon based on a file.
     public Icon getIcon() {
-        String fileName = "C:\\Users\\Andy\\IdeaProjects\\untitled4\\src\\datasets\\extinct.jpg";
+        String fileName = "datasets/extinct.jpg";
         ImageIcon icon = new ImageIcon(fileName);
         Image image = icon.getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         return new ImageIcon(image);
     }
 
+    // Constructs a ImageIcon based on a file.
     public Icon getLight() {
-        String lightName = "C:\\Users\\Andy\\IdeaProjects\\untitled4\\src\\datasets\\bulb.jpg";
+        String lightName = "datasets/bulb.jpg";
         ImageIcon light = new ImageIcon(lightName);
         Image extinctImage = light.getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
         return new ImageIcon(extinctImage);
     }
 
+    // Read the introduction.
     public void readIntro(JTextArea textArea) {
         try {
-            Scanner reader = new Scanner(new File("C:\\Users\\Andy\\IdeaProjects\\CSE143FinalProject\\src\\datasets\\blindDate.txt"));
+            Scanner reader = new Scanner(new File("datasets/blindDate.txt"));
             while (reader.hasNextLine()) {
                 textArea.append(reader.nextLine() + "\n");
             }
@@ -305,3 +317,4 @@ public class Evaluator {
         }
     }
 }
+
