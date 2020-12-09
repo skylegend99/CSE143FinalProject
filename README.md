@@ -20,7 +20,7 @@ We have 3 functions, all of which would have interaction with users in a web app
 
 - "View the intended Section": In this funtion, we will present the statistics of users who have already chosen the same TA and the capacity of this section. Given that there are usually limited spots in the registration of a section and each student's registration time is usually different, it's better for a user to know how many other students want this TA too. Thus it would give the user a second chance to think about whether this TA/section is the most suitable.
 
-#####In the three functions above, users can end the program anytime and directly display the results.
+##### In the three functions above, users can end the program anytime and directly display the results.
 								
 
 ### 2. Run this program on ed
