@@ -1,4 +1,4 @@
-#UW Autumn 2020 CSE143 Final Project 
+# UW Autumn 2020 CSE143 Final Project 
 ### Team member: 
 - Yuran Feng
 				
@@ -6,9 +6,9 @@
              
 - Dicheng Wu.
 
-##User Guide
+## User Guide
 
-###1. Program Introduction
+### 1. Program Introduction
 
 Hello! We are Group 22.
 Our program is called "If You Are The One", aimed at helping students find their best fit TA. 
@@ -32,7 +32,7 @@ We have 3 functions, all of which would have interaction with users in a web app
 In the three functions above, users can end the program anytime and directly display the results.
 								
 
-###2. How to run this program
+### 2. How to run this program
 
 To run this program on ed, you'll need to do the following steps:
 
