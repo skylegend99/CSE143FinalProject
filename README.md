@@ -7,10 +7,9 @@
              
 - Dicheng Wu.
 
-####Link to our video: https://www.youtube.com/watch?v=a5orszt1eRo&t=7s
-
 ## User Guide
 
+####Link to our video: https://www.youtube.com/watch?v=a5orszt1eRo&t=7s
 Note: Though this program could run ed perfectly, We suggest that you download our program in github and run in IDEA. 
 
 Github Link: https://github.com/skylegend99/CSE143FinalProject
