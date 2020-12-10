@@ -113,4 +113,3 @@ public class searchTA {
         dialog.setVisible(true);
     }
 }
-

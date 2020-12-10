@@ -8,6 +8,7 @@
 
 ## User Guide
 
+Note: Though this program could run ed perfectly, We suggest that you download our program in github and run in IDEA. Github Link: https://github.com/skylegend99/CSE143FinalProject
 ### 1. Program Introduction
 
 Hello! We are Group 22.
@@ -32,9 +33,7 @@ To run this program on ed, you'll need to do the following steps:
 2.  Find and click "graphic.java" on the left side.
 
 3.  Click the button "Open Terminal" on the top, open a terminal and type the following:
-	> javac graphic.java
-	
-	> java graphic
+	> javac graphic.java && java graphic;
 
 4.  There should be a remote web app turning up. If not, then click the "Remote App" button on the top.
 

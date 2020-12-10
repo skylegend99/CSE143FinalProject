@@ -5,10 +5,18 @@ import java.io.*;
 import org.apache.commons.text.WordUtils;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 public class Function {
+	// Information of each TA
 	private Map<String, Information> info;
+
+	// Evaluation of each TA
 	private Map<String, Evaluation> eva;
+
+	// Used to Autocorrect words
 	private LevenshteinDistance distance;
+
+	// Construct tree root
 	private Node overallRoot;
+
 
 	// Initializes the fields.
 	public Function(int course)  {
@@ -154,7 +162,7 @@ public class Function {
 	public Set<String> getEvaName() {
 		return eva.keySet();
 	}
-	
+
 	// Constructs the Node
 	private static class Node {
 		public Evaluation evaluation;
@@ -166,7 +174,7 @@ public class Function {
 		public Node(Evaluation evaluation, String name) {
 			this(evaluation, name, 0, null, null);
 		}
-		
+
 		// Accesses the node
 		public Node(Evaluation evaluation, String name, int data, Node left, Node right) {
 			this.evaluation = evaluation;
@@ -182,4 +190,3 @@ public class Function {
 		}
 	}
 }
-

@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Evaluator {
+    // Provide the blind date option for this class.
     private Function function;
     public void blindDate(Frame owner, Component parentComponent, int course) {
         function = new Function(course);
@@ -143,7 +144,7 @@ public class Evaluator {
         final JLabel person = new JLabel("Personality:");
         person.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
         String[] personData = new String[]{"Null", "Humorous", "Serious", "Extraverted", "Introverted", "Emotional",
-                                         "Rational", "Open-Minded", "Rigorous"};
+                "Rational", "Open-Minded", "Rigorous"};
         final JComboBox<String> personBox = new JComboBox<>(personData);
         personBox.setSelectedIndex(0);
         panel.add(personBox);
@@ -317,4 +318,3 @@ public class Evaluator {
         }
     }
 }
-
