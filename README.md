@@ -1,4 +1,5 @@
 # UW Autumn 2020 CSE143 Final Project 
+
 ### Team member: 
 - Yuran Feng
 				
@@ -6,9 +7,7 @@
              
 - Dicheng Wu.
 
-
 ####Link to our video: https://www.youtube.com/watch?v=a5orszt1eRo&t=7s
-
 
 ## User Guide
 
